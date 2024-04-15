@@ -9,7 +9,8 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                retry(3){
+                    sh 'npm install'
             }
         }
 
