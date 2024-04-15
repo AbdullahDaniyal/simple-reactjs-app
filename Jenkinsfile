@@ -13,25 +13,21 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Dependency Installation') {
             steps {
-                
-                    sh 'npm install'
-                
+                sh 'npm install'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                //sh "docker build -t lab-11:1 ."
-                echo "sleep 2"
+                sh 'docker build -t jenkins-practice .'
             }
         }
 
         stage('Run Docker Image') {
             steps {
-                //sh 'docker run -d -p 80:80 lab-11'
-                echo "sleep 1"
+                sh "docker run -d -p 3001:3000 jenkins-practice"
             }
         }
 
