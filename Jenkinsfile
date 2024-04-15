@@ -11,6 +11,7 @@ pipeline {
             steps {
                 retry(3){
                     sh 'npm install'
+                }
             }
         }
 
