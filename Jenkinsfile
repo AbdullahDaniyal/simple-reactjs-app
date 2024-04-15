@@ -3,12 +3,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'git clone https://github.com/AbdullahDaniyal/simple-reactjs-app.git'
+            script {
+                sh '''
+                if [ ! -d "newDirectory" ]; then
+                    git clone https://github.com/AbdullahDaniyal/simple-reactjs-app newDirectory
+                fi
+                '''
+                }
             }
         }
 
         stage('Install Dependencies') {
             steps {
+                
                     sh 'npm install'
                 
             }
