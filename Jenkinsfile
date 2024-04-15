@@ -33,11 +33,11 @@ pipeline {
 
         stage('Push Docker Image') {
              steps {
-                 script {
-                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                 //script {
+                     //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
                          //echo "docker.image(env.DOCKER_IMAGE).push('latest')
                          echo "sleep 2"
-                     }
+                     //}
                 }
              }
          }
